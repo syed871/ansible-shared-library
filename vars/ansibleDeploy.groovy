@@ -25,17 +25,17 @@ def call() {
             echo "Approval Required: ${cfg.KEEP_APPROVAL_STAGE}"
 
         }
+
+        stage('Clone Cassandra Tool') {
+
+            dir('cassandra-tool') {
+
+                git branch: 'abubakar',
+                    url: 'https://github.com/OT-MyGurukulam/Ansible_35.git'
+
+            }
+
+            echo 'Cassandra Ansible tool cloned successfully'
+        }
     }
-}
-
-stage('Clone Cassandra Tool') {
-
-    dir('cassandra-tool') {
-
-        git branch: 'abubakar',
-            url: 'https://github.com/OT-MyGurukulam/Ansible_35.git'
-
-    }
-
-    echo 'Cassandra Ansible tool cloned successfully'
 }

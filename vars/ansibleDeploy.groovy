@@ -29,7 +29,8 @@ def call() {
             dir('cassandra-tool') {
 
                 sh '''
-                    rm -rf *
+                    rm -rf ./*
+                    rm -rf ./.??*
                     git clone -b abubakar git@github.com:OT-MyGurukulam/Ansible_35.git .
                 '''
             }

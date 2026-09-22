@@ -1,23 +1,22 @@
 def call() {
 
-```
-node {
+    node {
 
-    def config = libraryResource('deployment.conf')
-    def cfg = [:]
+        def config = libraryResource('deployment.conf')
+        def cfg = [:]
 
-    config.split('\n').each { line ->
-        line = line.trim()
+        config.split('\n').each { line ->
+            line = line.trim()
 
-        if (line && !line.startsWith('#')) {
+            if (line && !line.startsWith('#')) {
 
-            def parts = line.split('=', 2)
+                def parts = line.split('=', 2)
 
-            if (parts.size() == 2) {
-                cfg[parts[0].trim()] = parts[1].trim()
+                if (parts.size() == 2) {
+                    cfg[parts[0].trim()] = parts[1].trim()
+                }
             }
         }
-    }
 
     stage('Read Configuration') {
 

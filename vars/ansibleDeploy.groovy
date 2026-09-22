@@ -27,3 +27,15 @@ def call() {
         }
     }
 }
+
+stage('Clone Cassandra Tool') {
+
+    dir('cassandra-tool') {
+
+        git branch: 'abubakar',
+            url: 'https://github.com/OT-MyGurukulam/Ansible_35.git'
+
+    }
+
+    echo 'Cassandra Ansible tool cloned successfully'
+}

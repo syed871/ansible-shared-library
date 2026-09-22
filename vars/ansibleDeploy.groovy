@@ -31,7 +31,8 @@ def call() {
             dir('cassandra-tool') {
 
                 git branch: 'abubakar',
-                    url: 'https://github.com/OT-MyGurukulam/Ansible_35.git'
+                    credentialsId: 'github-jenkins',
+                    url: 'git@github.com:OT-MyGurukulam/Ansible_35.git'
 
             }
 
